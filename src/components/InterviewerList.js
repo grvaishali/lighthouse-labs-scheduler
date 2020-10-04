@@ -10,14 +10,12 @@ export default function InterviewerList(props) {
         onChange: PropTypes.func.isRequired
     };
 
-    const interviewers = [];
-
     return (
         <section className="interviewers">
             <h4 className="interviewers__header text--light">Interviewer</h4>
             <ul className="interviewers__list">
                 {
-                    interviewers.map((value, index) => {
+                    props.interviewers.map((value, index) => {
                         return (
                             <InterviewerListItem
                                 key={value.id}
