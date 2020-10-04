@@ -46,8 +46,14 @@ export default function useApplicationData(initial) {
       appointments
     });
 
-    return axios.put(`http://localhost:8001/api/appointments/${id}`, { interview: interview });
-
+    return axios.put(`http://localhost:8001/api/appointments/${id}`, { interview: interview }).then(() => {
+      axios.get('http://localhost:8001/api/days').then((res) => {
+        setState(prev => ({
+          ...prev,
+          days: res.data
+        }));
+      })
+    });
   }
 
   const cancelInterview = (id) => {
@@ -61,9 +67,17 @@ export default function useApplicationData(initial) {
       appointments
     });
 
-    return axios.delete(`http://localhost:8001/api/appointments/${id}`);
-
+    return axios.delete(`http://localhost:8001/api/appointments/${id}`).then(() => {
+      axios.get('http://localhost:8001/api/days').then((res) => {
+        setState(prev => ({
+          ...prev,
+          days: res.data
+        }));
+      })
+    });
   }
+
+
 
   return {
     state,
