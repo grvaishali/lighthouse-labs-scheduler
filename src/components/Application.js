@@ -68,7 +68,6 @@ export default function Application(props) {
           appointments.map((appointment) => {
 
             const interview = getInterview(state, appointment.interview);
-
             return (
               <Appointment
                 key={appointment.id}
