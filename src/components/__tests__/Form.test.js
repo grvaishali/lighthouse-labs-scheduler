@@ -4,7 +4,7 @@ import { fireEvent } from "@testing-library/react";
 
 import { render, cleanup } from "@testing-library/react";
 
-import Form from "components/Appointments/Form";
+import Form from "components/Appointment/Form";
 
 afterEach(cleanup);
 

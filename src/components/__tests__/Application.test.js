@@ -12,7 +12,7 @@ import { render } from "@testing-library/react";
 /*
   We import the component that we are testing
 */
-import Appointment from "components/Appointments/index";
+import Appointment from "components/Appointment/index";
 
 /*
   A test that renders a React Component
